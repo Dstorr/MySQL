@@ -1,0 +1,195 @@
+mysql> create table pokedex(
+    -> id int not null auto_increment,
+    -> entry_num int not null,
+    -> pokemon varchar(100) not null,
+    -> hp int not null,
+    -> atk int not null,
+    -> def int not null,
+    -> spa int not null,
+    -> spd int not null,
+    -> type varchar(25) not null,
+    -> ability varchar(25) not null,
+    -> info text not null,
+    -> hidden_ability varchar(25) not null,
+    -> primary key(id));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> INSET INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (1, 1, 'Bulbasaur', 45, 49, 49, 65, 65, 45, 'Grass', 'Overgrow', 'There is a plant seed on its back right from the day this Pokemon is born. The seed slowly grows larger', 'Chlorophyll');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSET INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, abilit' at line 1
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (1, 1, 'Bulbasaur', 45, 49, 49, 65, 65, 45, 'Grass', 'Overgrow', 'There is a plant seed on its back right from the day this Pokemon is born. The seed slowly grows larger', 'Chlorophyll');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (1, 1, 'Bulbasaur', 45, 49, 49, 65, 65, 45, 'Grass', 'Overgrow', 'There is a plant seed on its back right from the day this Pokemon is born. The seed slowly grows larger', 'Chlorophyll');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (1, 1, 'Bulbasaur', 45, 49, 49, 65, 65, 45, 'Grass', 'Overgrow', 'There is a plant seed on its back right from the day this Pokemo seed slowly grows larger', 'Chlorophyll');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (1, 1, 'Bulbasaur', 45, 49, 49, 65, 65, 'Grass', 'Overgrow', 'There is a plant seed on its back right from the day this Pokemo seed slowly grows larger', 'Chlorophyll');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (2, 2, 'Ivysaur', 60, 62, 63, 80, 80, 'Grass', 'Overgrow', 'When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs', 'Chlorophyll');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (3, 3, 'Venusaur', 80, 82, 83, 100, 100, 'Grass', 'Overgrow', 'It's plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.', 'Chlorophyll');
+    '> ^C
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (3, 3, 'Venusaur', 80, 82, 83, 100, 100, 'Grass', 'Overgrow', 'Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight', 'Chlorophyll');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (4, 4, 'Charmander', 39, 52, 43, 60, 50, 'Fire', 'Blaze', 'It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.', 'Solar Power');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (5, 5, 'Charmeleon', 58, 64, 58, 80, 65, 'Fire', 'Blaze', 'It has a barbaric nature. In battlem it whips its fiery tail around and slashes away with sharp claws.', 'Solar Power');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (6, 6, 'Charizard', 78, 84, 78, 109, 85, 'Fire', 'Blaze', 'It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.', 'Solar Power');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (7, 7, 'Squirtle', 44, 48, 65, 60, 54, 'Water', 'Torremt', 'When it retracts its long neck into its shell, it squirts out water with vigorous force', 'Rain Dish');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (8, 8, 'Wartortle', 59, 63, 80, 65, 80, 'Water', 'Torrent', 'It recognized as a symbol of longevity. If its shell has algae on it, that Wartortle is very old.', 'Rain Dish');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (9, 9, 'Blastosie', 79, 83, 100, 85, 105, 'Water', 'Torrent', 'It crushes its foe under its heavy body to cause fainting. In a pinch, it withdraw inside it shell. 'Rain Dish');
+    '> ;
+    '> ^C
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (9, 9, 'Blastosie', 79, 83, 100, 85, 105, 'Water', 'Torrent', 'It crushes its foe under its heavy body to cause fainting. In a pinch, it withdraw inside it shell.', 'Rain Dish');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (10, 10, 'Caterpie', 45, 30, 35, 20, 20, 'Bug', 'Shield Dust', 'For protection, it releases a horrible stench from the atenna on its head to drive away eneimes', 'Run Away');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (11, 11, 'Metapod', 50, 20, 55, 25, 25, 'Bug', 'Shed Skin', 'It is waiting for the moment evolve, At this stage, it can only harden, so it remains motionless to avoid attack.', 'None');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> Select * from pokedex;
++----+-----------+------------+----+-----+-----+-----+-----+-------+-------------+-------------------------------------------------------------------------------------------------------------------+----------------+
+| id | entry_num | pokemon    | hp | atk | def | spa | spd | type  | ability     | info                                                                                                              | hidden_ability |
++----+-----------+------------+----+-----+-----+-----+-----+-------+-------------+-------------------------------------------------------------------------------------------------------------------+----------------+
+|  1 |         1 | Bulbasaur  | 45 |  49 |  49 |  65 |  65 | Grass | Overgrow    | There is a plant seed on its back right from the day this Pokemo seed slowly grows larger                         | Chlorophyll    |
+|  2 |         2 | Ivysaur    | 60 |  62 |  63 |  80 |  80 | Grass | Overgrow    | When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs                   | Chlorophyll    |
+|  3 |         3 | Venusaur   | 80 |  82 |  83 | 100 | 100 | Grass | Overgrow    | Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight                         | Chlorophyll    |
+|  4 |         4 | Charmander | 39 |  52 |  43 |  60 |  50 | Fire  | Blaze       | It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.               | Solar Power    |
+|  5 |         5 | Charmeleon | 58 |  64 |  58 |  80 |  65 | Fire  | Blaze       | It has a barbaric nature. In battlem it whips its fiery tail around and slashes away with sharp claws.            | Solar Power    |
+|  6 |         6 | Charizard  | 78 |  84 |  78 | 109 |  85 | Fire  | Blaze       | It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.                   | Solar Power    |
+|  7 |         7 | Squirtle   | 44 |  48 |  65 |  60 |  54 | Water | Torremt     | When it retracts its long neck into its shell, it squirts out water with vigorous force                           | Rain Dish      |
+|  8 |         8 | Wartortle  | 59 |  63 |  80 |  65 |  80 | Water | Torrent     | It recognized as a symbol of longevity. If its shell has algae on it, that Wartortle is very old.                 | Rain Dish      |
+|  9 |         9 | Blastosie  | 79 |  83 | 100 |  85 | 105 | Water | Torrent     | It crushes its foe under its heavy body to cause fainting. In a pinch, it withdraw inside it shell.               | Rain Dish      |
+| 10 |        10 | Caterpie   | 45 |  30 |  35 |  20 |  20 | Bug   | Shield Dust | For protection, it releases a horrible stench from the atenna on its head to drive away eneimes                   | Run Away       |
+| 11 |        11 | Metapod    | 50 |  20 |  55 |  25 |  25 | Bug   | Shed Skin   | It is waiting for the moment evolve, At this stage, it can only harden, so it remains motionless to avoid attack. | None           |
++----+-----------+------------+----+-----+-----+-----+-----+-------+-------------+-------------------------------------------------------------------------------------------------------------------+----------------+
+11 rows in set (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (12, 12, 'Butterfree', 60, 45, 50, 80, 80, 'Bug', 'Compound eyes', 'In battle, it flaps its wings at great speed to release highly toxic dust into the air.', 'Tinted Lens');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (13, 13, 'Weedle', 40, 35, 30, 20, 20, 'Bug', 'Shield Dust', 'Beware of the sharp stinger on its head. It hides in grass and bushes where it eats leaves.', 'None');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (14, 14, 'Kakuna', 45, 25, 50, 25, 25, 35, 'Bug', 'Shed Skin', 'Able to move only slightly, when endangered, it may stick out its stinger and poison its enemy.', 'None');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (14, 14, 'Kakuna', 45, 25, 50, 25, 25, 'Bug', 'Shed Skin', 'Able to move only slightly. When endgangered, it may stick out its stinger and poison its enemy.', 'None');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (15, 15, 'Beedrill', 65, 80, 40, 40, 80, 'Bug', 'Swam', 'It has three poisonous stingers on its forelegs and its tail. They are used to jab it enemy repeatedly.', 'None');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (16, 16, 'Pidgey', 40, 45, 40, 35, 35, 'Normal', 'Keen Eye', 'Very docile. If attacked, it will often kick up sand to protect itself rather than fight back', 'Big Pecks');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (17, 17, 'Pidgeotto', 63, 60, 55, 50, 50, 'Normal', 'Keen Eye', 'This Pokemon is fully of vitality. It constantly flies around its large territory in search of prey.', 'Big Pecks');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (18, 18, 'Pidgeot', 83, 80, 75, 70, 70, 'Normal', 'Keen Eye', 'This Pokemon flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.', 'Big Pecks');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (19, 19, 'Rattata', 30, 56, 35, 25, 35, 'Normal', 'Run Away', 'Will chew on anything with its fangs. If you see one, you can be certain that 40 more live in the area.', 'Hustle');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (20, 20, 'Raticate', 55, 81, 60, 50, 70, 'Normal', 'Run Away', 'Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey', 'Hustle');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (21, 21, 'Spearow', 40, 60, 30, 31, 31, 'Normal', 'Keen Eye', 'Inept at flying high. However, it can fly around very fast to protect its territory.', 'Sniper');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (22, 22, 'Fearow', 65, 90, 65, 61, 61, 'Normal', 'Keen Eye', 'A Pokemon that dates back many years. If it senses danger, it flies high and away instantly.', 'Sniper');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (23, 23, 'Ekans', 30, 60, 44, 40, 54,
+    -> ^C
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (23, 23, 'Ekans', 30, 60, 44, 40, 54, 'Poison', 'Intimidate'
+    -> ^C
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (23, 23, 'Ekans', 30, 60, 44, 40, 54, 'Poison', 'Intimidate', 'The older it gets, the longer it grows. At night, it wraps its long body around tree branches to rest.', 'None');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (24, 24, 'Arbok', 60, 85, 69, 65, 79, 'Poison', 'Intimidate', 'The frightening patterns on its belly have been studied. Six variations have been confirmed', 'None');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO pokedex (id, entry_num, pokemon, hp, atk, def, spa, spd, type, ability, info, hidden_ability)
+    -> VALUES (25, 25, 'Pikachu', 35, 55, 30, 50, 40, 'Electric', 'Static', 'Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stetchy.', 'Lightningrod');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> Select * From pokedex;
++----+-----------+------------+----+-----+-----+-----+-----+----------+---------------+-------------------------------------------------------------------------------------------------------------------+----------------+
+| id | entry_num | pokemon    | hp | atk | def | spa | spd | type     | ability       | info                                                                                                              | hidden_ability |
++----+-----------+------------+----+-----+-----+-----+-----+----------+---------------+-------------------------------------------------------------------------------------------------------------------+----------------+
+|  1 |         1 | Bulbasaur  | 45 |  49 |  49 |  65 |  65 | Grass    | Overgrow      | There is a plant seed on its back right from the day this Pokemo seed slowly grows larger                         | Chlorophyll    |
+|  2 |         2 | Ivysaur    | 60 |  62 |  63 |  80 |  80 | Grass    | Overgrow      | When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs                   | Chlorophyll    |
+|  3 |         3 | Venusaur   | 80 |  82 |  83 | 100 | 100 | Grass    | Overgrow      | Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight                         | Chlorophyll    |
+|  4 |         4 | Charmander | 39 |  52 |  43 |  60 |  50 | Fire     | Blaze         | It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.               | Solar Power    |
+|  5 |         5 | Charmeleon | 58 |  64 |  58 |  80 |  65 | Fire     | Blaze         | It has a barbaric nature. In battlem it whips its fiery tail around and slashes away with sharp claws.            | Solar Power    |
+|  6 |         6 | Charizard  | 78 |  84 |  78 | 109 |  85 | Fire     | Blaze         | It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.                   | Solar Power    |
+|  7 |         7 | Squirtle   | 44 |  48 |  65 |  60 |  54 | Water    | Torremt       | When it retracts its long neck into its shell, it squirts out water with vigorous force                           | Rain Dish      |
+|  8 |         8 | Wartortle  | 59 |  63 |  80 |  65 |  80 | Water    | Torrent       | It recognized as a symbol of longevity. If its shell has algae on it, that Wartortle is very old.                 | Rain Dish      |
+|  9 |         9 | Blastosie  | 79 |  83 | 100 |  85 | 105 | Water    | Torrent       | It crushes its foe under its heavy body to cause fainting. In a pinch, it withdraw inside it shell.               | Rain Dish      |
+| 10 |        10 | Caterpie   | 45 |  30 |  35 |  20 |  20 | Bug      | Shield Dust   | For protection, it releases a horrible stench from the atenna on its head to drive away eneimes                   | Run Away       |
+| 11 |        11 | Metapod    | 50 |  20 |  55 |  25 |  25 | Bug      | Shed Skin     | It is waiting for the moment evolve, At this stage, it can only harden, so it remains motionless to avoid attack. | None           |
+| 12 |        12 | Butterfree | 60 |  45 |  50 |  80 |  80 | Bug      | Compound eyes | In battle, it flaps its wings at great speed to release highly toxic dust into the air.                           | Tinted Lens    |
+| 13 |        13 | Weedle     | 40 |  35 |  30 |  20 |  20 | Bug      | Shield Dust   | Beware of the sharp stinger on its head. It hides in grass and bushes where it eats leaves.                       | None           |
+| 14 |        14 | Kakuna     | 45 |  25 |  50 |  25 |  25 | Bug      | Shed Skin     | Able to move only slightly. When endgangered, it may stick out its stinger and poison its enemy.                  | None           |
+| 15 |        15 | Beedrill   | 65 |  80 |  40 |  40 |  80 | Bug      | Swam          | It has three poisonous stingers on its forelegs and its tail. They are used to jab it enemy repeatedly.           | None           |
+| 16 |        16 | Pidgey     | 40 |  45 |  40 |  35 |  35 | Normal   | Keen Eye      | Very docile. If attacked, it will often kick up sand to protect itself rather than fight back                     | Big Pecks      |
+| 17 |        17 | Pidgeotto  | 63 |  60 |  55 |  50 |  50 | Normal   | Keen Eye      | This Pokemon is fully of vitality. It constantly flies around its large territory in search of prey.              | Big Pecks      |
+| 18 |        18 | Pidgeot    | 83 |  80 |  75 |  70 |  70 | Normal   | Keen Eye      | This Pokemon flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.                  | Big Pecks      |
+| 19 |        19 | Rattata    | 30 |  56 |  35 |  25 |  35 | Normal   | Run Away      | Will chew on anything with its fangs. If you see one, you can be certain that 40 more live in the area.           | Hustle         |
+| 20 |        20 | Raticate   | 55 |  81 |  60 |  50 |  70 | Normal   | Run Away      | Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey                        | Hustle         |
+| 21 |        21 | Spearow    | 40 |  60 |  30 |  31 |  31 | Normal   | Keen Eye      | Inept at flying high. However, it can fly around very fast to protect its territory.                              | Sniper         |
+| 22 |        22 | Fearow     | 65 |  90 |  65 |  61 |  61 | Normal   | Keen Eye      | A Pokemon that dates back many years. If it senses danger, it flies high and away instantly.                      | Sniper         |
+| 23 |        23 | Ekans      | 30 |  60 |  44 |  40 |  54 | Poison   | Intimidate    | The older it gets, the longer it grows. At night, it wraps its long body around tree branches to rest.            | None           |
+| 24 |        24 | Arbok      | 60 |  85 |  69 |  65 |  79 | Poison   | Intimidate    | The frightening patterns on its belly have been studied. Six variations have been confirmed                       | None           |
+| 25 |        25 | Pikachu    | 35 |  55 |  30 |  50 |  40 | Electric | Static        | Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stetchy.             | Lightningrod   |
++----+-----------+------------+----+-----+-----+-----+-----+----------+---------------+-------------------------------------------------------------------------------------------------------------------+----------------+
+25 rows in set (0.00 sec)
+
+mysql>
